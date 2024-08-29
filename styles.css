@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-image: url('./images/gif-background2.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 60% 50%;
+  height: 100%;
+}
+
+@keyframes backgroundMovement {
+  0% {
+    background-position: 60% 50%;
+  }
+  100% {
+    background-position: 70% 50%;
+  }
+}
+
+html {
+  height: 100%;
+}
+.container {
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 90vw;
+  max-width: 40em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 2em;
+  border-radius: 0.6em;
+  box-shadow: 0 1.2em 2.4em rgba(111, 85, 0, 0.25);
+}
+
+#options-container {
+  text-align: center;
+}
+
+#options-container div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2em 0 2.4em 0;
+}
+
+#options-container button {
+  padding: 0.6em 1.2em;
+  border: 3px solid #fc9d30;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #f1303d;
+  font-weight: 600;
+  border-radius: 0.3em;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+#options-container button:disabled {
+  border: 3px solid #808080;
+  color: #808080;
+  background-color: #efefef;
+}
+
+#play-audio {
+  display: block;
+  margin: auto;
+}
+
+#play-audio {
+  padding: 0.6em 1.2em;
+  border: 3px solid #fc9d30;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #f1303d;
+  font-weight: 600;
+  border-radius: 0.3em;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+#play-audio:hover {
+  animation: colorChange 1s infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    background-color: rgb(11, 203, 247);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+#options-container button:hover {
+  animation: colorChange 1s infinite;
+}
+
+.letter-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6em;
+}
+
+#letter-container button {
+  height: 2.4em;
+  width: 2.4em;
+  border-radius: 0.3em;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: #f1303d;
+  color: navy;
+  cursor: pointer;
+}
+
+.letter-container button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.new-game-popup {
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0.6em;
+}
+
+#user-input-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.8em;
+  margin: 0.6em 0 1.2em 0;
+}
+
+canvas {
+  display: block;
+  margin: auto;
+  border: 10px solid rgb(8, 216, 8);
+  border-radius: 10px;
+  width: 100%;
+  animation: borderChange 4s infinite alternate ease-in-out;
+}
+
+@keyframes borderChange {
+  0% {
+    border-color: rgb(8, 216, 8);
+  }
+  50% {
+    border-color: rgb(20, 180, 20);
+  }
+  100% {
+    border-color: rgb(11, 149, 11);
+  }
+}
+
+#result-text h2 {
+  font-size: 1.8em;
+  text-align: center;
+}
+
+#result-text p {
+  font-size: 1.25em;
+  margin: 1em 0 2em 0;
+  text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#result-text span {
+  font-weight: 600;
+}
+
+#new-game-button {
+  font-size: 1.25em;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  background-color: white;
+  border: 3px solid #fc9d30;
+  color: #f1303d;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+#new-game-button:hover {
+  animation: colorChange 1s infinite;
+}
+
+.win-msg {
+  color: #39d78d;
+}
+
+.lose-msg {
+  color: #fe5152;
+}
+
+.spaces {
+  margin-left: 1rem;
+}
+.dashes {
+  color: navy;
+}
+
+#stats-count {
+  margin-top: 1em;
+}
+
+.hide {
+  display: none;
+}
+
+h3 {
+  color: #f1303d;
+  font-weight: 600;
+}
+
+#wins {
+  color: blue;
+  font-weight: 600;
+}
+
+#loses {
+  color: #f1303d;
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  #options-container div {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
